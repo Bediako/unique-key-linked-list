@@ -86,7 +86,7 @@
 		return result(n);
 	}
 
-	var append = ukll.append = function(k, v, i)
+	var append = ukll.append = ukll.a = function(k, v, i)
 	{
 		var n;
 
@@ -106,7 +106,7 @@
 		return n;
 	};
 
-	var prepend = ukll.prepend = function(k,v,i)
+	var prepend = ukll.prepend = ukll.p = function(k,v,i)
 	{
 		var n;
 
@@ -126,7 +126,7 @@
 		return n;
 	};
 
-	function insert(k, v, i, prepend)
+	var insert = ukll.insert = ukll.i = function(k, v, i, prepend)
 	{
 		defined(k); defined(i); duplicate(k); present(i);
 
@@ -163,7 +163,7 @@
 		console.log('tail');
 	};
 
-	var some = ukll.some = function(f)
+	var some = ukll.some = ukll.s = function(f)
 	{
 		var n = head, done, c;
 
@@ -183,12 +183,12 @@
 		return c;
 	};
 
-	var each = ukll.each = function(f)
+	var each = ukll.each = ukll.e = function(f)
 	{
 		this.some(function(k,v,n) { f.call(this, k, v, n); });
 	};
 
-	var map = ukll.map = function(f)
+	var map = ukll.map = ukll.m = function(f)
 	{
 		var n = head, l = [];
 
@@ -201,12 +201,12 @@
 		return l;
 	};
 
-	var list =ukll.list = function()
+	var list = ukll.list = ukll.l = function()
 	{
 		return this.map(function(k,v,n) { return result(n); });
 	};
 
-	var keys = ukll.keys = function()
+	var keys = ukll.keys = ukll.k = function()
 	{
 		return this.map(function(k,v) { return k; });
 	};
